@@ -96,4 +96,4 @@ The script expects to find secrets.json and body.html in the working directory.
 
 - **body.html**: an HTML file (CSS can be embedded in the head).
 
-  The script derives plain text from the HTML as fallback in case that the recipient's email client does not display HTML.
+  The script derives plain text from the HTML as a fallback in case that the recipient's email client does not display HTML.
