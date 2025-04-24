@@ -73,7 +73,7 @@ class Table(object):
         # Space this request out from a previous request
         elapsed = time.monotonic() - self._last_request
         if elapsed < MIN_REQ_INTERVAL:
-            sleep = MIN_REQ_INTERVAL - elapsed  # + (5 / 100)  # +.05s to make sure we've waited long enough
+            sleep = MIN_REQ_INTERVAL - elapsed + (5 / 100)  # +.05s to make sure we've waited long enough
             time.sleep(sleep)
 
         self._last_request = time.monotonic()
