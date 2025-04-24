@@ -7,8 +7,14 @@ from urllib.parse import urlencode
 from typing import Any, NotRequired, TypedDict
 
 
-MIN_REQ_INTERVAL = 1 / 5  # The Airtable API limits the rate for any request to "5 requests per second per base"
-UPLOAD_BATCH_SIZE = 10  # The Airtable API limits uploads (POST, PATCH) per request to 10 records per HTTP request
+MIN_INTERVAL = 1 / 5
+"""Airtable API rate limit of 5 requests per second"""
+
+MARGIN = 0.05
+"""50ms margin for each request, to ensure staying under limit"""
+
+UPLOAD_BATCH_SIZE = 10
+"""Airtable API upload limit of 10 records per HTTP (POST, PUT, PATCH) request"""
 
 
 class RequestParams(TypedDict):
@@ -37,8 +43,8 @@ class Table(object):
         self._base_path = f"/v0/{app_id}/{table_id}"
         self._headers = {"Authorization": f"Bearer {pat}"}
 
-        # Record time of the last request, stay under rate limit
         self._last_request: float = 0
+        """time of the last request, as fractional seconds (time.monotonic)"""
 
     def __request(
         self,
@@ -53,6 +59,10 @@ class Table(object):
         Also keeps track of how often requests are made to stay under the Airtable API
         rate limit.
         """
+
+        now = time.monotonic
+        sleep = time.sleep
+
         if method not in ["GET", "PATCH"]:
             raise ValueError("__request only supports GET and PATCH")
 
@@ -70,28 +80,27 @@ class Table(object):
             headers["Content-Type"] = "application/json"
             body = json.dumps({"records": records})
 
-        # Space this request out from a previous request
-        elapsed = time.monotonic() - self._last_request
-        if elapsed < MIN_REQ_INTERVAL:
-            sleep = MIN_REQ_INTERVAL - elapsed + (5 / 100)  # +.05s to make sure we've waited long enough
-            time.sleep(sleep)
+        # delay this request if too soon
+        elapsed = now() - self._last_request
+        if elapsed < MIN_INTERVAL:
+            delta = MIN_INTERVAL - elapsed
+            sleep(delta + MARGIN)
 
-        self._last_request = time.monotonic()
+        self._last_request = now()
         self._conn.request(method, path, body, headers)
         r = self._conn.getresponse()
 
         r_code = r.status
         r_data = json.loads(r.read())
 
-        # All's good!
         if r_code == 200:
             return r_data
 
-        error_json = r_data.get("error", {})
+        err_json = r_data.get("error", {})
+        err_type = err_json.get("type", str(r_code))
+        err_msg = err_json.get("message", json.dumps(r_data))
 
-        raise Exception(
-            f"type: {error_json.get('type', str(r_code))}: {error_json.get('message', json.dumps(r_data))}",
-        )
+        raise Exception(f"{err_type}: {err_msg}")
 
     def fetch(self, fields: list[str] | None = None, view: str = "") -> list[Record]:
         """
