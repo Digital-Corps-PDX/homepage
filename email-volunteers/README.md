@@ -4,7 +4,7 @@ Send introductroy emails with PDXDC's Proton mail account from a Python script f
 
 ## Install and run it
 
-### Install:
+### Install
 
 - Up-to-date Python.
 
