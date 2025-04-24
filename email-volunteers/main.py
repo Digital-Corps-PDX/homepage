@@ -6,19 +6,11 @@ import sys
 from datetime import UTC, datetime
 from email.message import EmailMessage
 from email.headerregistry import Address
+
+from airtable import Record, Table
+
 from html.parser import HTMLParser
 
-# I got an SSL: CERTIFICATE_VERIFY_FAILED error trying to make
-# an HTTPS call.  My resolution:
-#  - as an admin, `pip install --upgrade certifi`
-#  - then,        `export SSL_CERT_FILE=$(python3 -m certifi)`
-#
-# I don't know if the upgrade helped.
-#
-# Q: https://stackoverflow.com/questions/77442172
-#  A: https://stackoverflow.com/a/77443265/246801
-#  A: https://stackoverflow.com/a/79235523/246801
-from airtable import Record, Table
 
 SUBJECT = "🌲 PDX Digital Corps — Thanks for your interest!"
 
