@@ -1,3 +1,4 @@
+import argparse
 import json
 import logging
 import smtplib
@@ -21,14 +22,26 @@ TABLE_ID = "tblBizheg4s11n93a"
 # The view of volunteers that have not been emailed the intro
 VIEW_ID = "viwOUapltcR0kfXof"
 
-VIEW_ID = "viwUYJjUwUNGqC4ir"  # dev-mode view of just ZachYoung_38
-
 
 logging.basicConfig(
     format="%(asctime)s %(message)s",
     datefmt="%Y/%m/%d %H:%M:%S",
     level=logging.INFO,
 )
+
+DEV_MODE: bool = False
+parser = argparse.ArgumentParser()
+parser.add_argument(
+    "--dev",
+    action="store_true",
+    help="pull from dev-view in Airtable, and only send emails to zacharysyoung@gmail.com",
+)
+args = parser.parse_args()
+DEV_MODE = args.dev
+
+
+if DEV_MODE:
+    VIEW_ID = "viwUYJjUwUNGqC4ir"  # dev-view of just ZachYoung_38
 
 
 def main():
@@ -137,10 +150,10 @@ def send_emails(volunteers: list[Record], mail_srv: smtplib.SMTP, html: str, tex
             logging.info(f"error: could not get name and email: {e}")
             continue
 
-        # dev-mode sanity check to prevent emailing real volunteers
-        dev_email = "zacharysyoung@gmail.com"
-        if email != dev_email:
-            raise ValueError(f"DEV-MODE: {email} != {dev_email}")
+        if DEV_MODE:
+            dev_email = "zacharysyoung@gmail.com"
+            if email != dev_email:
+                raise ValueError(f"DEV-MODE: {email} != {dev_email}")
 
         try:
             msg = EmailMessage()
