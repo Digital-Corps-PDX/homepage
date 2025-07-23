@@ -89,6 +89,98 @@
   </script>
 </head>
 <body class="bg-white text-gray-900">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PDX Digital Corps - Connecting technologists to non-profits in the community</title>
+  <meta name="description" content="PDX Digital Corps was a civic tech sprint that launched in March 2025, connecting tech volunteers with Portland-area organizations to solve real digital problems through focused projects." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @font-face {
+      font-family: 'Embro';
+      src: url('/fonts/embro-regular.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Embro';
+      src: url('/fonts/embro-regular-italic.woff') format('woff');
+      font-weight: normal;
+      font-style: italic;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Embro';
+      src: url('/fonts/embro-medium.woff') format('woff');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Embro';
+      src: url('/fonts/embro-medium-italic.woff') format('woff');
+      font-weight: 500;
+      font-style: italic;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Embro';
+      src: url('/fonts/embro-semibold.woff') format('woff');
+      font-weight: 600;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Embro';
+      src: url('/fonts/embro-semibold-italic.woff') format('woff');
+      font-weight: 600;
+      font-style: italic;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Embro';
+      src: url('/fonts/embro-bold.woff') format('woff');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        fontFamily: {
+          'sans': ['Embro', 'sans-serif'],
+          'serif': ['Embro', 'serif'],
+          'mono': ['monospace'],
+        },
+        extend: {
+          colors: {
+            pdx: {
+              gold: '#B38600',     // Primary color - accessible gold
+              green: '#005C45',    // Secondary color - Portland green
+              light: '#FFF8E1',    // Light gold background
+              dark: '#221C00'      // Dark text color
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-white text-gray-900">
  <nav class="bg-white shadow-sm">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-16">
@@ -108,7 +200,7 @@
       <!-- Menu items (desktop) -->
       <div id="desktop-menu" class="hidden sm:flex space-x-4">
         <a href="/about.html" class="text-gray-700 hover:text-pdx-gold font-medium">About</a>
-        <a href="#closing-event" class="text-gray-700 hover:text-pdx-gold font-medium">Final Event</a>
+        <a href="/report.html" class="text-gray-700 hover:text-pdx-gold font-medium">Final Report</a>
         <a href="#contact" class="text-gray-700 hover:text-pdx-gold font-medium">Contact</a>
       </div>
     </div>
@@ -116,7 +208,7 @@
     <!-- Menu items (mobile) -->
     <div id="mobile-menu" class="sm:hidden hidden mt-2 space-y-2">
       <a href="/about.html" class="block text-gray-700 hover:text-pdx-gold font-medium">About</a>
-      <a href="#closing-event" class="block text-gray-700 hover:text-pdx-gold font-medium">Final Event</a>
+      <a href="/report.html" class="block text-gray-700 hover:text-pdx-gold font-medium">Final Report</a>
       <a href="#contact" class="block text-gray-700 hover:text-pdx-gold font-medium">Contact</a>
     </div>
   </div>
@@ -132,9 +224,8 @@
 <p class="text-lg text-gray-600 mb-6">
   For an event that mostly was built over a weekend, it's an exercise in proving what you can do when you just try something, ask for help and bring people together.
 </p>
-    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="#closing-event" class="px-6 py-3 bg-pdx-gold text-white font-medium rounded hover:bg-pdx-dark transition-colors">Join Our Final Event</a>
-      <a href="#fork-this" class="px-6 py-3 bg-white text-pdx-dark border border-pdx-dark font-medium rounded hover:bg-gray-50 transition-colors">Fork This in Your Community</a>
+    <div class="flex justify-center">
+      <a href="/report.html" class="px-8 py-4 bg-pdx-gold text-white font-medium text-lg rounded hover:bg-pdx-dark transition-colors">See What We Built</a>
     </div>
   </div>
 </header>
