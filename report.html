@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Final Report | PDX Digital Corps</title>
+  <meta name="description" content="See the results from Portland Digital Corps' first cohort - 6 projects completed, 100+ people involved, and real impact delivered to local organizations." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @font-face {
+      font-family: 'Embro';
+      src: url('/fonts/embro-regular.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Embro';
+      src: url('/fonts/embro-regular-italic.woff') format('woff');
+      font-weight: normal;
+      font-style: italic;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Embro';
+      src: url('/fonts/embro-medium.woff') format('woff');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Embro';
+      src: url('/fonts/embro-medium-italic.woff') format('woff');
+      font-weight: 500;
+      font-style: italic;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Embro';
+      src: url('/fonts/embro-semibold.woff') format('woff');
+      font-weight: 600;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Embro';
+      src: url('/fonts/embro-semibold-italic.woff') format('woff');
+      font-weight: 600;
+      font-style: italic;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Embro';
+      src: url('/fonts/embro-bold.woff') format('woff');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        fontFamily: {
+          'sans': ['Embro', 'sans-serif'],
+          'serif': ['Embro', 'serif'],
+          'mono': ['monospace'],
+        },
+        extend: {
+          colors: {
+            pdx: {
+              gold: '#B38600',     // Primary color - accessible gold
+              green: '#005C45',    // Secondary color - Portland green
+              light: '#FFF8E1',    // Light gold background
+              dark: '#221C00'      // Dark text color
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-white text-gray-900">
+ <nav class="bg-white shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo -->
+      <a href="/" class="text-xl font-bold text-pdx-dark">PDX Digital Corps</a>
+
+      <!-- Mobile menu toggle -->
+      <div class="sm:hidden">
+        <button id="menu-toggle" class="text-pdx-dark focus:outline-none" aria-label="Toggle menu">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Menu items (desktop) -->
+      <div id="desktop-menu" class="hidden sm:flex space-x-4">
+        <a href="/about.html" class="text-gray-700 hover:text-pdx-gold font-medium">About</a>
+        <a href="/report.html" class="text-gray-700 hover:text-pdx-gold font-medium">Final Report</a>
+        <a href="#contact" class="text-gray-700 hover:text-pdx-gold font-medium">Contact</a>
+      </div>
+    </div>
+
+    <!-- Menu items (mobile) -->
+    <div id="mobile-menu" class="sm:hidden hidden mt-2 space-y-2">
+      <a href="/about.html" class="block text-gray-700 hover:text-pdx-gold font-medium">About</a>
+      <a href="/report.html" class="block text-gray-700 hover:text-pdx-gold font-medium">Final Report</a>
+      <a href="#contact" class="block text-gray-700 hover:text-pdx-gold font-medium">Contact</a>
+    </div>
+  </div>
+</nav>
+  
+  <!-- Hero -->
+<header class="bg-pdx-light py-20">
+  <div class="max-w-4xl mx-auto text-center px-4">
+   <h1 class="text-5xl font-bold mb-4 text-pdx-dark">What We Built Together</h1>
+<p class="text-xl text-gray-700 mb-6">
+  Over four months, Portland Digital Corps brought together 100+ technologists to work on real projects for local organizations. Here's what we accomplished in our first cohort.
+</p>
+  </div>
+</header>
+
+<!-- Projects Section -->
+<section class="py-16 bg-white" id="projects">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-3xl font-semibold mb-8 text-center text-pdx-dark">Our Projects</h2>
+    
+    <!-- Built Oregon -->
+    <div class="mb-16">
+      <h3 class="text-2xl font-bold mb-4 text-pdx-dark">Built Oregon</h3>
+      <div class="bg-gray-50 p-4 rounded-lg">
+        <iframe 
+          src="https://docs.google.com/presentation/d/1hmH54S4dkpQnvg87LFPea4S_Sp9p_PqgrwC916PXQgc/embed?start=false&loop=false&delayms=3000" 
+          frameborder="0" 
+          width="100%" 
+          height="450" 
+          allowfullscreen="true" 
+          mozallowfullscreen="true" 
+          webkitallowfullscreen="true">
+        </iframe>
+      </div>
+    </div>
+
+    <!-- OSU Uplift Lab -->
+    <div class="mb-16">
+      <h3 class="text-2xl font-bold mb-4 text-pdx-dark">OSU Uplift Lab - Maternal Health Map</h3>
+      <div class="bg-gray-50 p-4 rounded-lg">
+        <iframe 
+          style="border: 1px solid rgba(0, 0, 0, 0.1);" 
+          width="100%" 
+          height="450" 
+          src="https://embed.figma.com/slides/ubpbAw7NBYccHcx1w4rgJJ/Uplift-Maternal-Health-Map?node-id=9-72&embed-host=share" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
+    <!-- Cape Perpetua Collaborative -->
+    <div class="mb-16">
+      <h3 class="text-2xl font-bold mb-4 text-pdx-dark">Cape Perpetua Collaborative</h3>
+      <div class="bg-gray-50 p-4 rounded-lg">
+        <iframe 
+          style="border: 1px solid rgba(0, 0, 0, 0.1);" 
+          width="100%" 
+          height="450" 
+          src="https://embed.figma.com/slides/gmiPId2LyqVCu2SrYr2zTe/CPC-Recap?node-id=1-32&embed-host=share" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
+    <!-- Families for Safe Streets Portland -->
+    <div class="mb-16">
+      <h3 class="text-2xl font-bold mb-4 text-pdx-dark">Families for Safe Streets Portland</h3>
+      <div class="bg-gray-50 p-4 rounded-lg">
+        <iframe 
+          style="border: 1px solid rgba(0, 0, 0, 0.1);" 
+          width="100%" 
+          height="450" 
+          src="https://embed.figma.com/deck/jAdCkfCGpCTkj6XBPVS6FV/FSS-PDX-10_07_2025?node-id=7-179&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&embed-host=share" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- What We Learned -->
+<section class="py-16 bg-pdx-light" id="lessons">
+  <div class="max-w-4xl mx-auto px-4">
+    <h2 class="text-3xl font-semibold mb-8 text-center text-pdx-dark">What We Learned</h2>
+    <div class="prose prose-lg max-w-none text-gray-700">
+      <p>
+        [This is where you'll add your reflection on the cohort - what worked well, what challenges you faced, key insights about civic tech, volunteer coordination, project scoping, etc. Consider covering:]
+      </p>
+      <ul class="space-y-2">
+        <li><strong>Project Scoping:</strong> How you approached defining realistic deliverables</li>
+        <li><strong>Team Formation:</strong> What worked in matching volunteers to projects</li>
+        <li><strong>Community Building:</strong> How you kept people engaged throughout</li>
+        <li><strong>Partner Relationships:</strong> What you learned about working with nonprofits</li>
+        <li><strong>Volunteer Management:</strong> Balancing structure with flexibility</li>
+        <li><strong>Technical Decisions:</strong> Tools, processes, and approaches that worked</li>
+      </ul>
+      <p>
+        [Add your personal reflections and observations here - this is your chance to document the experience authentically and share insights for anyone who might want to replicate this model elsewhere.]
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- By the Numbers -->
+<section class="py-16 bg-white" id="impact">
+  <div class="max-w-5xl mx-auto px-4">
+    <h2 class="text-3xl font-semibold mb-8 text-center text-pdx-dark">Impact & Reach</h2>
+    <div class="grid md:grid-cols-4 gap-8 text-center">
+      <div>
+        <div class="text-4xl font-bold text-pdx-gold mb-2">6</div>
+        <div class="text-gray-600">Organizations Helped</div>
+      </div>
+      <div>
+        <div class="text-4xl font-bold text-pdx-gold mb-2">100+</div>
+        <div class="text-gray-600">Volunteers Engaged</div>
+      </div>
+      <div>
+        <div class="text-4xl font-bold text-pdx-gold mb-2">X</div>
+        <div class="text-gray-600">Hours Contributed</div>
+      </div>
+      <div>
+        <div class="text-4xl font-bold text-pdx-gold mb-2">$X</div>
+        <div class="text-gray-600">Value Delivered</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Acknowledgments -->
+<section class="py-16 bg-gray-50" id="thanks">
+  <div class="max-w-4xl mx-auto px-4 text-center">
+    <h2 class="text-3xl font-semibold mb-6 text-pdx-dark">Thank You</h2>
+    <p class="text-lg text-gray-700 mb-6">
+      Portland Digital Corps happened because of incredible people who showed up, rolled up their sleeves, and made things happen.
+    </p>
+    <p class="text-gray-700 mb-8">
+      Thanks to every volunteer who contributed their time and skills, every partner organization that trusted us with their projects, and everyone who supported this experiment in civic tech. You proved that when you focus on shipping real solutions instead of endless meetings, amazing things can happen.
+    </p>
+    <p class="text-sm text-gray-600">
+      Want to bring this model to your community? <a href="mailto:info@digitalcorpspdx.org" class="text-pdx-gold hover:underline">Email us</a> - we're happy to share what we learned.
+    </p>
+  </div>
+</section>
+  
+ <!-- Footer -->
+  <footer class="py-8 text-center text-sm text-gray-500 bg-white border-t" id="contact">
+    <div class="mt-4 flex justify-center">
+  <img src="/fonts/pdxdc.svg" alt="PDX Digital Corps Logo" class="h-10 opacity-60" />
+</div>
+    <p class="mb-1 font-serif text-base">Digital Corps of Portland</p>
+    <p class="mt-2">
+      <a href="/about.html" class="text-pdx-gold hover:underline">About</a> · 
+      <a href="mailto:info@digitalcorpspdx.org" class="text-pdx-gold hover:underline">Contact</a>
+    </p>
+    <p class="text-xs mt-2">2025 • An experiment in civic tech volunteering</p>
+  </footer>
+  <script>
+  document.getElementById('menu-toggle').addEventListener('click', function () {
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
+
+</body>
+</html>
